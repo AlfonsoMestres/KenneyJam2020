@@ -12,10 +12,13 @@ public class GameController : MonoBehaviour
     public static int zombieHealth = 40;
     public static float zombieSpeed = 10f;
 
+    public static List<EntityController> zombies = new List<EntityController>();
+    public static List<EntityController> people = new List<EntityController>();
+
     // Start is called before the first frame update
     void Start()
     {
-
+          
     }
 
     // Update is called once per frame
