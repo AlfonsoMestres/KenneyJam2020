@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public static int zombieHealth = 40;
     public static float zombieSpeed = 10f;
 
+    public static float zombieAttackDistance = 2.0f;
+
     public static List<EntityController> zombies = new List<EntityController>();
     public static List<EntityController> people = new List<EntityController>();
 

@@ -12,6 +12,9 @@ public class EntityController : MonoBehaviour
     private bool deathIdle; // This will avoid multiple calls to the coroutine
     private NavMeshAgent navMeshAgent;
 
+    private float timeZombieBetweenChecks = 0.5f;
+    private float zombieCheckTimer;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -30,8 +33,7 @@ public class EntityController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SearchForNewVictim()
     {
         GameObject target = null;
         float minDistance = 10000000; //needs to be BIG the first time
@@ -47,7 +49,37 @@ public class EntityController : MonoBehaviour
         if (target != null)
         {
             navMeshAgent.SetDestination(target.transform.position);
+            if (minDistance > GameController.zombieAttackDistance)
+            {
+                //Deal some DAMAGE to target
+            }
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isZombie)
+        {
+            //Basic zombie behaviour
+            if (timeZombieBetweenChecks < zombieCheckTimer)
+            {
+                zombieCheckTimer = 0.0f;
+                SearchForNewVictim();
+            }
+            else
+            {
+                zombieCheckTimer += Time.deltaTime;
+            }
+        }
+        else
+        {
+
+        }
+
+
+
+        //Will this be used for both people and zombies?
 
         if (!deathIdle && health <= 0 )
         {
