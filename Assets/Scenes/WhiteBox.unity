@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 646002914}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1672,6 +1672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b30761237cefcf479b4361b168ea30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombies: []
+  people: []
 --- !u!4 &646002915
 Transform:
   m_ObjectHideFlags: 0
