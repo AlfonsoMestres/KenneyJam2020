@@ -21,6 +21,9 @@ public class EntityController : MonoBehaviour
     private float timeZombieBetweenChecks = 0.5f;
     private float zombieCheckTimer;
 
+    private float timePersonBetweenChecks = 3.0f;
+    private float personCheckTimer;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -34,10 +37,13 @@ public class EntityController : MonoBehaviour
         if (isZombie)
         {
             GameController.zombies.Add(this);
+            navMeshAgent.speed = GameController.zombieSpeed;
         }
         else
         {
             GameController.people.Add(this);
+            navMeshAgent.speed = GameController.peopleSpeed;
+            personCheckTimer = Random.Range(0.0f, timePersonBetweenChecks);
         }
     }
 
@@ -64,6 +70,36 @@ public class EntityController : MonoBehaviour
         }
     }
 
+    private void WatchOutForZombies()
+    {
+        GameObject closestZombie = null;
+        float minDistance = 10000000; //needs to be BIG the first time
+        foreach (var zombie in GameController.zombies)
+        {
+            var distance = Vector3.Distance(zombie.gameObject.transform.position, transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestZombie = zombie.gameObject;
+            }
+        }
+        if (closestZombie != null && minDistance < GameController.peopleFearDistance)
+        {
+            Vector3 direction = Vector3.Normalize(transform.position - closestZombie.gameObject.transform.position);
+            navMeshAgent.SetDestination(transform.position + direction * 10.0f);
+
+        }
+        else
+        {
+            float xRand = Random.Range(-1f, 1f);
+            float zRand = Random.Range(-1f, 1f);
+
+            Vector3 randomDirection = Vector3.Normalize(new Vector3(xRand, 0f,zRand));
+
+            navMeshAgent.SetDestination(transform.position + randomDirection * 5.0f);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -84,7 +120,15 @@ public class EntityController : MonoBehaviour
         }
         else
         {
-
+            if(timePersonBetweenChecks < personCheckTimer)
+            {
+                WatchOutForZombies();
+                personCheckTimer = 0.0f;
+            }
+            else
+            {
+                personCheckTimer += Time.deltaTime;
+            }
         }
 
 
