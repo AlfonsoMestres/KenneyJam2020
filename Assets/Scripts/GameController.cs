@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public const float transformTime = 3.5f; // Time a person wait to be transform or killed
     public const int zombieProbability = 10;
     public const int zombieHealth = 40;
+    public const int zombieAttackDamage = 40;
+
     public const float zombieSpeed = 10f;
     public const float peopleSpeed = 5f;
     public const float zombieAttackDistance = 2.0f;
@@ -31,6 +33,11 @@ public class GameController : MonoBehaviour
     private Event<EntityController> onZombieDeath = new Event<EntityController>();
 
     #endregion
+    private void Start()
+    {
+        CreateGame();
+        StartGame();
+    }
 
     public void CreateGame()
     {
@@ -75,7 +82,7 @@ public class GameController : MonoBehaviour
         RemoveZombie(zombie);
         onZombieDeath.Invoke(zombie);
 
-        if(zombies.Count == 0)
+        if (zombies.Count == 0)
         {
             //        //TODO: Lose condition
             //        //TODO: trigger a couple of seconds to see everyone alive
@@ -87,6 +94,7 @@ public class GameController : MonoBehaviour
     public void PersonConverted(EntityController person)
     {
         RemovePerson(person);
+        AddZombie(person);
         onPersonConverted.Invoke(person);
 
         if (people.Count == 0)
