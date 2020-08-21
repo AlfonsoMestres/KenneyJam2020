@@ -50,6 +50,7 @@ public class EntityController : MonoBehaviour
     private void SearchForNewVictim()
     {
         GameObject target = null;
+        EntityController targetController = null;
         float minDistance = 10000000; //needs to be BIG the first time
         foreach (var person in GameController.people)
         {
@@ -58,16 +59,24 @@ public class EntityController : MonoBehaviour
             {
                 minDistance = distance;
                 target = person.gameObject;
+                targetController = person;
             }
         }
         if (target != null)
         {
             navMeshAgent.SetDestination(target.transform.position);
-            if (minDistance > GameController.zombieAttackDistance)
+            if (minDistance < GameController.zombieAttackDistance)
             {
-                //Deal some DAMAGE to target
+                zombieCheckTimer = -2.0f; //this way they remain in place
+                targetController.TakeDamage(GameController.zombieAttackDamage);
+                navMeshAgent.ResetPath();
             }
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
     }
 
     private void WatchOutForZombies()
@@ -86,7 +95,7 @@ public class EntityController : MonoBehaviour
         if (closestZombie != null && minDistance < GameController.peopleFearDistance)
         {
             Vector3 direction = Vector3.Normalize(transform.position - closestZombie.gameObject.transform.position);
-            navMeshAgent.SetDestination(transform.position + direction * 10.0f);
+            navMeshAgent.SetDestination(transform.position + direction * 20.0f);
 
         }
         else
@@ -123,23 +132,26 @@ public class EntityController : MonoBehaviour
             if(timePersonBetweenChecks < personCheckTimer)
             {
                 WatchOutForZombies();
-                personCheckTimer = 0.0f;
+                personCheckTimer = Random.Range(0.0f, timePersonBetweenChecks * 0.2f);
             }
             else
             {
                 personCheckTimer += Time.deltaTime;
             }
+
+
+
+            if (!deathIdle && health <= 0)
+            {
+                //deathIdle = true;
+                //StartCoroutine("Death");
+            }
         }
 
-
+        
 
         //Will this be used for both people and zombies?
 
-        if (!deathIdle && health <= 0 )
-        {
-            deathIdle = true;
-            StartCoroutine("Death");
-        }
     }
 
     IEnumerator Death()

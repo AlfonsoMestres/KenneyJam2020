@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static int zombiesAlive = 0;
     public static int zombieProbability = 10;
     public static int zombieHealth = 40;
+    public static int zombieAttackDamage = 40;
     public static float zombieSpeed = 10f;
     public static float peopleSpeed = 5f;
 
