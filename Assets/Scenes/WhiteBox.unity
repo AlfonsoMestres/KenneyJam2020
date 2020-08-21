@@ -7192,26 +7192,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2907388752529510250, guid: ede7bc2aae18efc4dab9cb069ce78d72,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 2505006676511509856}
-    - target: {fileID: 8087930027669867524, guid: ede7bc2aae18efc4dab9cb069ce78d72,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087930027669867524, guid: ede7bc2aae18efc4dab9cb069ce78d72,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087930027669867524, guid: ede7bc2aae18efc4dab9cb069ce78d72,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4.29
-      objectReference: {fileID: 0}
     - target: {fileID: 9181616930611578682, guid: ede7bc2aae18efc4dab9cb069ce78d72,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7224,18 +7204,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede7bc2aae18efc4dab9cb069ce78d72, type: 3}
---- !u!114 &2505006676511509856 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7884676548190600709, guid: ede7bc2aae18efc4dab9cb069ce78d72,
-    type: 3}
-  m_PrefabInstance: {fileID: 2505006676511509855}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3034845368407779372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 639086204588664179, guid: ede7bc2aae18efc4dab9cb069ce78d72,
