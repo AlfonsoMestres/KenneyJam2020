@@ -1778,7 +1778,7 @@ GameObject:
   - component: {fileID: 639086204588664179}
   - component: {fileID: 639086204595915411}
   - component: {fileID: 2505006675810807696}
-  - component: {fileID: 2907388752529510250}
+  - component: {fileID: 8137778300769087046}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -1844,7 +1844,7 @@ NavMeshAgent:
   m_BaseOffset: -0.18
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2907388752529510250
+--- !u!114 &8137778300769087046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1853,13 +1853,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 639086204588636499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398d54e7acdbe7d4492cf91af97a6996, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fa93133c844934c8368b32b75bc776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieHPColor: {r: 0, g: 0, b: 0, a: 0}
+  entityHPColor: {r: 0.069013596, g: 1, b: 0, a: 0}
   healthBar: {fileID: 7884676548190600709}
   health: 100
-  isZombie: 1
 --- !u!1 &639086204588636501
 GameObject:
   m_ObjectHideFlags: 0

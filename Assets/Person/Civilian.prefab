@@ -2398,8 +2398,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535717115059917606}
-  - component: {fileID: 9112896833017896455}
   - component: {fileID: 279070672315885773}
+  - component: {fileID: 1537557968979219325}
   m_Layer: 0
   m_Name: Civilian
   m_TagString: Untagged
@@ -2423,22 +2423,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9112896833017896455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535717115059917605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398d54e7acdbe7d4492cf91af97a6996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombieHPColor: {r: 0.08552865, g: 0.5849056, b: 0.19943026, a: 1}
-  healthBar: {fileID: 1769741900}
-  health: 100
-  isZombie: 0
 --- !u!195 &279070672315885773
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2461,3 +2445,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1537557968979219325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535717115059917605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c566325af4e84dd41b5909422de117ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityHPColor: {r: 1, g: 0, b: 0.05751419, a: 0}
+  healthBar: {fileID: 1769741900}
+  health: 100
