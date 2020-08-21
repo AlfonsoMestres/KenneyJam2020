@@ -1793,7 +1793,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639086204588636499}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 12.96, y: -5.3616705, z: 8.56}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieHPColor: {r: 0, g: 0, b: 0, a: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7884676548190600709}
   health: 100
   isZombie: 1
 --- !u!1 &639086204588636501
@@ -2076,7 +2076,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712776299143581649}
   m_LocalRotation: {x: -0, y: -0.6845881, z: -0, w: 0.72893023}
-  m_LocalPosition: {x: 0, y: 0, z: 6.3670907}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.008000006, y: 0.008, z: 0.008000006}
   m_Children:
   - {fileID: 6247676898748591814}
@@ -2085,7 +2085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 24.575544, y: 4.293381}
+  m_AnchoredPosition: {x: 0, y: 4.29}
   m_SizeDelta: {x: 720, y: 405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &65184846040066383
