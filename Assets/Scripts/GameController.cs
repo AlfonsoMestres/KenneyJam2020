@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     private bool playerWon;
     private bool gameHasEnded;
 
-    public static int cursedHeartsObtained;
+    public static int cursedHeartsObtained = 10;
 
     private void Awake()
     {
@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
 
     private void LoadPrefs()
     {
-        cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 0);
+        cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 10);
     }
 
     private void ChangeEndGameText()

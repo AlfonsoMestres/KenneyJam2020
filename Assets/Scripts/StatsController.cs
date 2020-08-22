@@ -32,10 +32,10 @@ public class StatsController : MonoBehaviour
             buyAmount.gameObject.SetActive(false);
             buyButton.gameObject.SetActive(false);
             maxedText.enabled = true;
-
+            return;
         }
         statPrice = prices[(int)sliderStat.value];
-        gameObject.transform.Find("Amount").GetComponent<Text>().text = statPrice.ToString();
+        buyAmount.text = statPrice.ToString();
     }
 
     // Update is called once per frame
