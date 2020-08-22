@@ -37,13 +37,11 @@ public class GameController : MonoBehaviour
     private bool playerWon;
     private bool gameHasEnded;
 
-    private int cursedHeartsObtained;
+    public static int cursedHeartsObtained;
 
     private void Awake()
     {
         mainCamera = Camera.main;
-        curseTouchAmountText = GameObject.Find("CurseTouchAmount").GetComponent<Text>();
-        civiliansAliveAmountText = GameObject.Find("CiviliansRemainingAmount").GetComponent<Text>();
     }
 
     #region Events
@@ -95,6 +93,9 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
+        curseTouchAmountText = GameObject.Find("CurseTouchAmount").GetComponent<Text>();
+        civiliansAliveAmountText = GameObject.Find("CiviliansRemainingAmount").GetComponent<Text>();
+
         //Start logic
         onGameStarted.Invoke();
         LoadPrefs();
