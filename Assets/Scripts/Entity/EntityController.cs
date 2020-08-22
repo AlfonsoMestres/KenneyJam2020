@@ -46,13 +46,11 @@ public abstract class EntityController : MonoBehaviour
         if (health <= 0 && !isDead) StartCoroutine("Death");
     }
 
-    // Update is called once per frame
     protected virtual void Update()
     {
         healthBar.value = health;
     }
 
-    // How is this called? I cannot trigger the death animation if this is not called
     IEnumerator Death()
     {
         isDead = true;

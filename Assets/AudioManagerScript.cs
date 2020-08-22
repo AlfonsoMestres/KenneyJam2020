@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource clickUIStatIncrease;
+    public AudioSource clickTap;
+
+    public void PlayStatIncreaseSound()
     {
-        
+        clickUIStatIncrease.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayButtonTap()
     {
-        
+        clickTap.Play();
     }
 }
