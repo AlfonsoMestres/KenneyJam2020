@@ -76,6 +76,6 @@ public class ZombieController : EntityController
 
     protected override void DeathBehaviour()
     {
-        //this has to happen every 1 sec or so better than in any frame
+        gameController.ZombieDied(this);
     }
 }

@@ -16,6 +16,8 @@ public abstract class EntityController : MonoBehaviour
     protected NavMeshAgent navMeshAgent;
     protected Animator characterAnimator;
 
+    protected bool isZombie;
+
     protected GameController gameController = null;
 
     private void Awake()

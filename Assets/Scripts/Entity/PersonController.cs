@@ -11,7 +11,6 @@ public class PersonController : EntityController
     protected override void OnGameCreated()
     {
         base.OnGameCreated();
-
         gameController.AddPerson(this);
         navMeshAgent.speed = GameController.peopleSpeed;
         personCheckTimer = Random.Range(0.0f, timePersonBetweenChecks);

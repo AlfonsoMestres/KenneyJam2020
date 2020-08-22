@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -24,11 +26,18 @@ public class GameController : MonoBehaviour
     private Camera mainCamera;
 
     public Transform zombiePrefab;
+    public Text winLoseText;
+    public Texture2D[] mouseSprites;
 
     private bool hasGameStarted;
 
     private Text curseTouchAmountText;
     private Text civiliansAliveAmountText;
+
+    private bool playerWon;
+    private bool gameHasEnded;
+
+    private int cursedHeartsObtained;
 
     private void Awake()
     {
@@ -55,8 +64,10 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         CreateGame();
+        Cursor.SetCursor(mouseSprites[0], Vector2.zero, CursorMode.Auto);
         StartGame();
     }
+
 
     public void CreateGame()
     {
@@ -65,7 +76,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (hasGameStarted && Input.GetMouseButtonDown(0) && curseAmount > 0)
+        if (hasGameStarted && Input.GetMouseButtonDown(0) && curseAmount > 0 && !gameHasEnded)
         {
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -86,13 +97,44 @@ public class GameController : MonoBehaviour
     {
         //Start logic
         onGameStarted.Invoke();
+        LoadPrefs();
         hasGameStarted = true;
         curseTouchAmountText.text = curseAmount.ToString();
     }
 
-    public void EndGame()
+    public void EndGame(bool win)
     {
         //End game logic
+        SavePrefs();
+        gameHasEnded = true;
+        playerWon = win;
+        Invoke("ChangeEndGameText", 3.0f);
+
+    }
+
+    private void SavePrefs()
+    {
+        PlayerPrefs.SetInt("Currency", cursedHeartsObtained);
+    }
+
+    private void LoadPrefs()
+    {
+        cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 0);
+    }
+
+    private void ChangeEndGameText()
+    {
+
+        winLoseText.gameObject.SetActive(true);
+        if (playerWon)
+        {
+            winLoseText.text = "YOU WIN";
+        }
+        else
+        {
+            winLoseText.text = "YOU LOSE";
+        }
+
         onGameFinished.Invoke();
     }
 
@@ -124,12 +166,12 @@ public class GameController : MonoBehaviour
         RemoveZombie(zombie);
         onZombieDeath.Invoke(zombie);
 
-        if (zombies.Count == 0)
+        if (zombies.Count == 0 && !gameHasEnded)
         {
             //        //TODO: Lose condition
             //        //TODO: trigger a couple of seconds to see everyone alive
             //        //TODO: trigger UI LOSE and Rewards
-            EndGame();
+            EndGame(false);
         }
     }
 
@@ -139,15 +181,33 @@ public class GameController : MonoBehaviour
         RemovePerson(person);
         onPersonConverted.Invoke(person);
         Destroy(person.gameObject);
+        ++cursedHeartsObtained;
         Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
 
-        if (people.Count == 0)
+        if (people.Count == 0 && !gameHasEnded)
         {
             //        //TODO: Win condition
             //        //TODO: trigger a couple of seconds to see everyone dead or transformed
             //        //TODO: trigger UI WIN and Rewards
-            EndGame();
+            EndGame(true);
         }
     }
+
+
     #endregion
+
+    #region EndGamePopup
+
+    public void OnGoToShopClicked()
+    {
+
+    }
+
+    public void OnPlayAgainClicked()
+    {
+        SceneManager.LoadScene("WhiteBox");
+    }
+
+    #endregion
+
 }
