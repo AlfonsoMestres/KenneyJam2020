@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityHPColor: {r: 1, g: 0, b: 0.05751419, a: 0}
   healthBar: {fileID: 7694204546320867773}
-  health: 10
+  health: 100
   isDead: 0
   timePersonBetweenChecks: 2
 --- !u!136 &564849619673725259
