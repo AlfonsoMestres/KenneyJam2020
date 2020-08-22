@@ -13,7 +13,7 @@ public class StatsController : MonoBehaviour
     void Start()
     {
         sliderStat = gameObject.GetComponentInChildren<Slider>();
-        statPrice = int.Parse(gameObject.transform.Find("Amount").GetComponent<Text>().text);
+        //statPrice = int.Parse(gameObject.transform.Find("Amount").GetComponent<Text>().text);
     }
 
     public void IncreaseStat()

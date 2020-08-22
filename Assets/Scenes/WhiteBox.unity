@@ -672,7 +672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &195144970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1957,7 +1957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &544455830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,6 +2280,9 @@ MonoBehaviour:
   zombiePrefab: {fileID: 4555574007165443112, guid: ede7bc2aae18efc4dab9cb069ce78d72,
     type: 3}
   winLoseText: {fileID: 195144971}
+  mouseSprites:
+  - {fileID: 2800000, guid: eb022133ebd174641b717b8421fadd4e, type: 3}
+  - {fileID: 2800000, guid: a511f5588f9cfeb4182386220ca26ce6, type: 3}
 --- !u!4 &646002915
 Transform:
   m_ObjectHideFlags: 0
@@ -2612,7 +2615,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.719e-42, y: 1.05e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 1.46e-43, w: 0.05078125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3623,6 +3626,28 @@ MonoBehaviour:
       - m_Target: {fileID: 646002914}
         m_MethodName: OnGoToShopClicked
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6961449503466528719}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 195144969}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9752,6 +9777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5291172136734168457, guid: 695935e53dd9e31469d0d1c416b52414,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291172136734168461, guid: 695935e53dd9e31469d0d1c416b52414,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9869,22 +9899,22 @@ PrefabInstance:
     - target: {fileID: 1394227770926702535, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3816277769088121723, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5064172955289037610, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6354511404818463147, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6961449503892263989, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
@@ -9996,13 +10026,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasShop
       objectReference: {fileID: 0}
+    - target: {fileID: 6961449503892263993, guid: ea95b963f840b8c449f4f69c065a858b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6995505710904910431, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea95b963f840b8c449f4f69c065a858b, type: 3}
+--- !u!1 &6961449503466528719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6961449503892263993, guid: ea95b963f840b8c449f4f69c065a858b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6961449503466528718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7791417046417580059
 PrefabInstance:
   m_ObjectHideFlags: 0

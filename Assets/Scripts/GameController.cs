@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
+        curseTouchAmountText = GameObject.Find("CurseTouchAmount").GetComponent<Text>();
+        civiliansAliveAmountText = GameObject.Find("CiviliansRemainingAmount").GetComponent<Text>();
     }
 
     #region Events
@@ -74,27 +76,33 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (hasGameStarted && Input.GetMouseButtonDown(0) && curseAmount > 0 && !gameHasEnded)
+        if (hasGameStarted && !gameHasEnded)
         {
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))
             {
                 var personController = hit.collider.gameObject.GetComponentInChildren<PersonController>();
-                if(personController != null)
+                if (personController != null)
                 {
-                    personController.Die();
-                    curseAmount = curseAmount - 1;
-                    curseTouchAmountText.text = curseAmount.ToString();
+                    Cursor.SetCursor(mouseSprites[1], Vector2.zero, CursorMode.Auto);
+                    if (Input.GetMouseButtonDown(0) && curseAmount > 0)
+                    {
+                        personController.Die();
+                        curseAmount = curseAmount - 1;
+                        curseTouchAmountText.text = curseAmount.ToString();
+                    }
+                }
+                else
+                {
+                    Cursor.SetCursor(mouseSprites[0], Vector2.zero, CursorMode.Auto);
                 }
             }
-        } 
+        }
     }
 
     public void StartGame()
     {
-        curseTouchAmountText = GameObject.Find("CurseTouchAmount").GetComponent<Text>();
-        civiliansAliveAmountText = GameObject.Find("CiviliansRemainingAmount").GetComponent<Text>();
 
         //Start logic
         onGameStarted.Invoke();
