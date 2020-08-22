@@ -19,6 +19,9 @@ public class PersonController : EntityController
     protected override void Update()
     {
         base.Update();
+
+        if (!gameController.hasGameStarted) return;
+
         if (timePersonBetweenChecks < personCheckTimer)
         {
             WatchOutForZombies();

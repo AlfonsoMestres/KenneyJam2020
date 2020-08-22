@@ -21,6 +21,8 @@ public class ZombieController : EntityController
     {
         base.Update();
 
+        if (!gameController.hasGameStarted) return;
+
         //Basic zombie behaviour
         if (zombieActivated && timeZombieBetweenChecks < zombieCheckTimer && health > 0)
         {
