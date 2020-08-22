@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public Text cursedHeartsShop;
+    public Text cursedHeartsGame;
+
     public static float transformTime = 3.5f; // Time a person wait to be transform or killed
     public static int zombieProbability = 100;
     public static int zombieHealth = 40;
@@ -76,6 +79,8 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        UpdateCursedHearts();
+
         if (hasGameStarted && !gameHasEnded)
         {
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -129,6 +134,14 @@ public class GameController : MonoBehaviour
     private void LoadPrefs()
     {
         cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 10);
+        cursedHeartsShop.text = cursedHeartsObtained.ToString();
+        cursedHeartsGame.text = cursedHeartsObtained.ToString();
+    }
+
+    public void UpdateCursedHearts()
+    {
+        cursedHeartsGame.text = cursedHeartsObtained.ToString();
+        cursedHeartsShop.text = cursedHeartsObtained.ToString();
     }
 
     private void ChangeEndGameText()

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StatsController : MonoBehaviour
 {
     public List<int> prices;
+    public Text cursedHeartsShop;
 
     private Text maxedText;
     private Button buyButton;
@@ -22,11 +23,15 @@ public class StatsController : MonoBehaviour
         sliderStat.maxValue = prices.Count;
         buyAmount = gameObject.transform.Find("Amount").GetComponent<Text>();
         buyAmount.text = prices[0].ToString();
+        cursedHeartsShop = gameObject.transform.parent.Find("CurrencyAmount").GetComponent<Text>();
+        statPrice = prices[(int)sliderStat.value];
     }
 
     public void IncreaseStat()
     {
         sliderStat.value = sliderStat.value + 1;
+        GameController.cursedHeartsObtained = GameController.cursedHeartsObtained - statPrice;
+
         if (sliderStat.value == sliderStat.maxValue)
         {
             buyAmount.gameObject.SetActive(false);
@@ -44,10 +49,12 @@ public class StatsController : MonoBehaviour
         if (GameController.cursedHeartsObtained < statPrice)
         {
             buyButton.enabled = false;
+            buyButton.image.color = Color.grey;
         } 
         else
         {
             buyButton.enabled = true;
+            buyButton.image.color = Color.white;
         }
     }
 }
