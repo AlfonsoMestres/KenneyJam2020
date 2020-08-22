@@ -70,6 +70,12 @@ public class PersonController : EntityController
 
     }
 
+
+    public void Die()
+    {
+        StartCoroutine("Death");
+    }
+
     protected override void DeathBehaviour()
     {
         if (Random.Range(0.0f, 100.0f) <= GameController.zombieProbability)
@@ -77,4 +83,6 @@ public class PersonController : EntityController
             gameController.PersonConverted(this);
         }
     }
+
+
 }

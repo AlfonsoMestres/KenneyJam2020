@@ -147,7 +147,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 5.42}
-  m_SizeDelta: {x: 720, y: 405}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7694204545543812468
 Canvas:
@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 7901690496263974103}
   - component: {fileID: 7572867682312427324}
   - component: {fileID: 9192355462765964428}
+  - component: {fileID: 564849619673725259}
   m_Layer: 0
   m_Name: Civilian
   m_TagString: Untagged
@@ -452,7 +453,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityHPColor: {r: 1, g: 0, b: 0.05751419, a: 0}
   healthBar: {fileID: 7694204546320867773}
-  health: 100
+  health: 10
+  isDead: 0
+  timePersonBetweenChecks: 2
+--- !u!136 &564849619673725259
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901690496263974100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.61
+  m_Height: 5.48
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.74, z: 0}
 --- !u!1001 &7901690497222910607
 PrefabInstance:
   m_ObjectHideFlags: 0

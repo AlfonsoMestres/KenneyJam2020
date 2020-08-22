@@ -18,7 +18,16 @@ public class GameController : MonoBehaviour
     public List<EntityController> zombies = new List<EntityController>();
     public List<EntityController> people = new List<EntityController>();
 
+    private Camera mainCamera;
+
     public Transform zombiePrefab;
+
+    private bool hasGameStarted;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+    }
 
     #region Events
     public IEventSubscribe OnGameCreated { get { return onGameCreated; } }
@@ -46,10 +55,28 @@ public class GameController : MonoBehaviour
         onGameCreated.Invoke();
     }
 
+    private void Update()
+    {
+        if(hasGameStarted && Input.GetMouseButtonDown(0))
+        {
+            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit))
+            {
+                var personController = hit.collider.gameObject.GetComponentInChildren<PersonController>();
+                if(personController != null)
+                {
+                    personController.Die();
+                }
+            }
+        } 
+    }
+
     public void StartGame()
     {
         //Start logic
         onGameStarted.Invoke();
+        hasGameStarted = true;
     }
 
     public void EndGame()
@@ -95,12 +122,9 @@ public class GameController : MonoBehaviour
 
     public void PersonConverted(EntityController person)
     {
-        //Vector3 position = person.gameObject.transform.position;
-        //Quaternion rotation = person.gameObject.transform.rotation;
         Transform personTransform = person.gameObject.transform;
         RemovePerson(person);
         onPersonConverted.Invoke(person);
-
         Destroy(person.gameObject);
         Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
 
