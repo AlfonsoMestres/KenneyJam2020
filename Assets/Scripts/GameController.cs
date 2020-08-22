@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameController : MonoBehaviour
     public static float zombieAttackDistance = 2.0f;
     public static float peopleFearDistance = 8.0f;
 
+    public static int curseAmount = 1;
+
     public List<EntityController> zombies = new List<EntityController>();
     public List<EntityController> people = new List<EntityController>();
 
@@ -24,9 +27,14 @@ public class GameController : MonoBehaviour
 
     private bool hasGameStarted;
 
+    private Text curseTouchAmountText;
+    private Text civiliansAliveAmountText;
+
     private void Awake()
     {
         mainCamera = Camera.main;
+        curseTouchAmountText = GameObject.Find("CurseTouchAmount").GetComponent<Text>();
+        civiliansAliveAmountText = GameObject.Find("CiviliansRemainingAmount").GetComponent<Text>();
     }
 
     #region Events
@@ -57,7 +65,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if(hasGameStarted && Input.GetMouseButtonDown(0))
+        if (hasGameStarted && Input.GetMouseButtonDown(0) && curseAmount > 0)
         {
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -67,6 +75,8 @@ public class GameController : MonoBehaviour
                 if(personController != null)
                 {
                     personController.Die();
+                    curseAmount = curseAmount - 1;
+                    curseTouchAmountText.text = curseAmount.ToString();
                 }
             }
         } 
@@ -77,6 +87,7 @@ public class GameController : MonoBehaviour
         //Start logic
         onGameStarted.Invoke();
         hasGameStarted = true;
+        curseTouchAmountText.text = curseAmount.ToString();
     }
 
     public void EndGame()
@@ -99,11 +110,13 @@ public class GameController : MonoBehaviour
     public void AddPerson(EntityController person)
     {
         people.Add(person);
+        civiliansAliveAmountText.text = people.Count.ToString();
     }
 
     private void RemovePerson(EntityController person)
     {
         people.Remove(person);
+        civiliansAliveAmountText.text = people.Count.ToString();
     }
 
     public void ZombieDied(EntityController zombie) //We could add information about zombie
