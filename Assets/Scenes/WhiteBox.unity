@@ -2760,7 +2760,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.85236e+28, y: 6.742551e+22, z: 1.7077775e+19, w: 1.7859842e+31}
+  m_BoundingSphereOverride: {x: 0, y: 2.0333304e-14, z: 4.58e-43, w: 1.0766e-41}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10115,7 +10115,7 @@ PrefabInstance:
     - target: {fileID: 5291172136734168457, guid: 695935e53dd9e31469d0d1c416b52414,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5291172136734168461, guid: 695935e53dd9e31469d0d1c416b52414,
         type: 3}
@@ -10246,17 +10246,17 @@ PrefabInstance:
     - target: {fileID: 569339242784519855, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2326634405843030547, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5910288477255102347, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6020360661311855073, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
@@ -10368,6 +10368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasShop
       objectReference: {fileID: 0}
+    - target: {fileID: 6020360661311855085, guid: ea95b963f840b8c449f4f69c065a858b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6020360661647750466, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10426,12 +10431,12 @@ PrefabInstance:
     - target: {fileID: 7727989061942817919, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8455254415430870782, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea95b963f840b8c449f4f69c065a858b, type: 3}
