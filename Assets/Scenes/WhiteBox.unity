@@ -11193,6 +11193,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5589205699410329732, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5589205699853098626, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11257,6 +11262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShopButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589205699853098652, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700417170658, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
@@ -11408,6 +11418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589205700959579489, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.599968
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700959579494, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
