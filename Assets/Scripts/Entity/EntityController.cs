@@ -15,6 +15,7 @@ public abstract class EntityController : MonoBehaviour
 
     protected bool deathIdle; // This will avoid multiple calls to the coroutine
     protected NavMeshAgent navMeshAgent;
+    protected Animator characterAnimator;
 
     protected GameController gameController = null;
 
@@ -22,6 +23,8 @@ public abstract class EntityController : MonoBehaviour
     {
         gameController = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<GameController>();
         gameController.OnGameCreated.Subscribe(OnGameCreated);
+
+        characterAnimator = GameObject.FindObjectOfType<Animator>();
 
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -47,9 +50,11 @@ public abstract class EntityController : MonoBehaviour
         healthBar.value = health;
     }
 
+    // How is this called? I cannot trigger the death animation if this is not called
     IEnumerator Death()
     {
-        //TODO: trigger death animation
+        characterAnimator.SetBool("Dead", true);
+
         yield return new WaitForSeconds(GameController.transformTime);
 
         DeathBehaviour();
