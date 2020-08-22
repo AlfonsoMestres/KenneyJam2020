@@ -33,8 +33,6 @@ public class GameController : MonoBehaviour
     public Text winLoseText;
     public Texture2D[] mouseSprites;
 
-
-
     private Text curseTouchAmountText;
     private Text civiliansAliveAmountText;
 
@@ -109,6 +107,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         //Start logic
+        curseAmount = 1;
         onGameStarted.Invoke();
         LoadPrefs();
         hasGameStarted = true;
