@@ -44,7 +44,7 @@ public class ZombieController : EntityController
         foreach (var person in gameController.people)
         {
             var distance = Vector3.Distance(person.gameObject.transform.position, transform.position);
-            if (distance < minDistance)
+            if (distance < minDistance && !person.isDead)
             {
                 minDistance = distance;
                 target = person.gameObject;
@@ -54,10 +54,10 @@ public class ZombieController : EntityController
         if (target != null)
         {
             navMeshAgent.SetDestination(target.transform.position);
-            if (minDistance < GameController.zombieAttackDistance)
+            if (minDistance < GameController.zombieAttackDistance && !targetController.isDead)
             {
                 characterAnimator.SetBool("Attacking", true);
-                zombieCheckTimer = -2.0f; //this way they remain in place
+                zombieCheckTimer = -1.0f; //this way they remain in place
                 targetController.TakeDamage(GameController.zombieAttackDamage);
                 navMeshAgent.ResetPath();
             } 
