@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public static float peopleSpeed = 5f;
     public static float zombieAttackDistance = 2.0f;
     public static float peopleFearDistance = 8.0f;
+    public bool hasGameStarted;
 
     public static int curseAmount = 1;
 
@@ -29,7 +30,7 @@ public class GameController : MonoBehaviour
     public Text winLoseText;
     public Texture2D[] mouseSprites;
 
-    private bool hasGameStarted;
+
 
     private Text curseTouchAmountText;
     private Text civiliansAliveAmountText;
@@ -65,7 +66,6 @@ public class GameController : MonoBehaviour
     {
         CreateGame();
         Cursor.SetCursor(mouseSprites[0], Vector2.zero, CursorMode.Auto);
-        StartGame();
     }
 
 
@@ -103,7 +103,6 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
-
         //Start logic
         onGameStarted.Invoke();
         LoadPrefs();
