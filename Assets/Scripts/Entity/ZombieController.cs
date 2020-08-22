@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ZombieController : EntityController
 {
+    public bool zombieActivated = false;
+    public float zombieActivationTime = 2.75f;
+
     private float timeZombieBetweenChecks = 0.5f;
     private float zombieCheckTimer;
 
@@ -17,16 +20,20 @@ public class ZombieController : EntityController
     protected override void Update()
     {
         base.Update();
+
         //Basic zombie behaviour
-        if (timeZombieBetweenChecks < zombieCheckTimer)
+        if (zombieActivated && timeZombieBetweenChecks < zombieCheckTimer && health > 0)
         {
+            TakeDamage(5f); // Zombie life span
             zombieCheckTimer = 0.0f;
             SearchForNewVictim();
         }
         else
         {
             zombieCheckTimer += Time.deltaTime;
+            if(!zombieActivated) zombieActivated = zombieCheckTimer > zombieActivationTime;
         }
+
     }
 
     private void SearchForNewVictim()

@@ -9,9 +9,8 @@ public abstract class EntityController : MonoBehaviour
 {
     public Color entityHPColor;
     public Slider healthBar;
-    public int health = 100;
-
-    // TODO: Update health bar when health value is affected
+    public float health = 100f;
+    public bool isDead = false;
 
     protected bool deathIdle; // This will avoid multiple calls to the coroutine
     protected NavMeshAgent navMeshAgent;
@@ -39,9 +38,10 @@ public abstract class EntityController : MonoBehaviour
         healthBar.value = health;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
+        if (health <= 0 && !isDead) StartCoroutine("Death");
     }
 
     // Update is called once per frame
@@ -53,6 +53,9 @@ public abstract class EntityController : MonoBehaviour
     // How is this called? I cannot trigger the death animation if this is not called
     IEnumerator Death()
     {
+        isDead = true;
+        healthBar.transform.parent.gameObject.SetActive(false);
+        navMeshAgent.isStopped = true;
         characterAnimator.SetBool("Dead", true);
 
         yield return new WaitForSeconds(GameController.transformTime);

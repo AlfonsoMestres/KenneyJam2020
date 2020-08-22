@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PersonController : EntityController
 {
-    private float timePersonBetweenChecks = 1.5f;
+    public float timePersonBetweenChecks = 1.5f;
     private float personCheckTimer;
 
     protected override void OnGameCreated()
@@ -36,14 +36,6 @@ public class PersonController : EntityController
             {
                 characterAnimator.SetBool("Walking", true);
             }
-        }
-
-        if (!deathIdle && health <= 0)
-        {
-            gameController.PersonConverted(this);
-            Destroy(gameObject);
-            //deathIdle = true;
-            //StartCoroutine("Death");
         }
     }
 
@@ -82,15 +74,7 @@ public class PersonController : EntityController
     {
         if (Random.Range(0.0f, 100.0f) <= GameController.zombieProbability)
         {
-            //GameController.zombiesAlive = GameController.zombiesAlive + 1;
-            healthBar.value = GameController.zombieHealth;
-            healthBar.transform.Find("Fill Area").GetComponentInChildren<Image>().color = entityHPColor;
-            // TODO: trigger effect 
-            // TODO: change skin change skin
-        }
-        else
-        {
-            // TODO: remove life bar
+            gameController.PersonConverted(this);
         }
     }
 }

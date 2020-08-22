@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public const float transformTime = 3.5f; // Time a person wait to be transform or killed
-    public const int zombieProbability = 10;
-    public const int zombieHealth = 40;
-    public const int zombieAttackDamage = 40;
+    public static float transformTime = 3.5f; // Time a person wait to be transform or killed
+    public static int zombieProbability = 100;
+    public static int zombieHealth = 40;
+    public static int zombieAttackDamage = 40;
 
     public static float zombieSpeed = 5f;
     public static float peopleSpeed = 5f;
@@ -101,6 +101,7 @@ public class GameController : MonoBehaviour
         RemovePerson(person);
         onPersonConverted.Invoke(person);
 
+        Destroy(person.gameObject);
         Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
 
         if (people.Count == 0)
