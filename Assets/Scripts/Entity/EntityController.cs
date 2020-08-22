@@ -24,7 +24,7 @@ public abstract class EntityController : MonoBehaviour
         gameController = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<GameController>();
         gameController.OnGameCreated.Subscribe(OnGameCreated);
 
-        characterAnimator = GameObject.FindObjectOfType<Animator>();
+        characterAnimator = gameObject.transform.Find("characterMedium").GetComponent<Animator>();
 
         navMeshAgent = GetComponent<NavMeshAgent>();
     }

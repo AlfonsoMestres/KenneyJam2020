@@ -51,14 +51,17 @@ public class PersonController : EntityController
                 closestZombie = zombie.gameObject;
             }
         }
+
+        // TODO: Se tiene que añadir una variable mas que sea "pensando" para meterle el idle.. porque hay veces que se para para hacer tiempo y sigue haciendo el moonwalk
         if (closestZombie != null && minDistance < GameController.peopleFearDistance)
         {
             Vector3 direction = Vector3.Normalize(transform.position - closestZombie.gameObject.transform.position);
             navMeshAgent.SetDestination(transform.position + direction * 20.0f);
-
+            characterAnimator.SetBool("Walking", true);
         }
         else
         {
+            characterAnimator.SetBool("Walking", true);
             float xRand = Random.Range(-1f, 1f);
             float zRand = Random.Range(-1f, 1f);
 

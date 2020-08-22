@@ -49,10 +49,21 @@ public class ZombieController : EntityController
             navMeshAgent.SetDestination(target.transform.position);
             if (minDistance < GameController.zombieAttackDistance)
             {
+                characterAnimator.SetBool("Attacking", true);
                 zombieCheckTimer = -2.0f; //this way they remain in place
                 targetController.TakeDamage(GameController.zombieAttackDamage);
                 navMeshAgent.ResetPath();
+            } 
+            else
+            {
+                characterAnimator.SetBool("Walking", true);
+                characterAnimator.SetBool("Attacking", false);
             }
+        } 
+        else
+        {
+            characterAnimator.SetBool("Walking", false);
+            characterAnimator.SetBool("Attacking", false);
         }
     }
 

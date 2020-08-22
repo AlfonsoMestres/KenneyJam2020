@@ -10,10 +10,10 @@ public class GameController : MonoBehaviour
     public const int zombieHealth = 40;
     public const int zombieAttackDamage = 40;
 
-    public const float zombieSpeed = 10f;
-    public const float peopleSpeed = 5f;
-    public const float zombieAttackDistance = 2.0f;
-    public const float peopleFearDistance = 5.0f;
+    public static float zombieSpeed = 5f;
+    public static float peopleSpeed = 5f;
+    public static float zombieAttackDistance = 2.0f;
+    public static float peopleFearDistance = 5.0f;
 
     public List<EntityController> zombies = new List<EntityController>();
     public List<EntityController> people = new List<EntityController>();
