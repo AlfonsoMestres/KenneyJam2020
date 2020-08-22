@@ -13,10 +13,12 @@ public class GameController : MonoBehaviour
     public static float zombieSpeed = 5f;
     public static float peopleSpeed = 5f;
     public static float zombieAttackDistance = 2.0f;
-    public static float peopleFearDistance = 5.0f;
+    public static float peopleFearDistance = 8.0f;
 
     public List<EntityController> zombies = new List<EntityController>();
     public List<EntityController> people = new List<EntityController>();
+
+    public Transform zombiePrefab;
 
     #region Events
     public IEventSubscribe OnGameCreated { get { return onGameCreated; } }
@@ -93,9 +95,13 @@ public class GameController : MonoBehaviour
 
     public void PersonConverted(EntityController person)
     {
+        //Vector3 position = person.gameObject.transform.position;
+        //Quaternion rotation = person.gameObject.transform.rotation;
+        Transform personTransform = person.gameObject.transform;
         RemovePerson(person);
-        AddZombie(person);
         onPersonConverted.Invoke(person);
+
+        Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
 
         if (people.Count == 0)
         {

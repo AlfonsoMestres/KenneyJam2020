@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PersonController : EntityController
 {
-    private float timePersonBetweenChecks = 3.0f;
+    private float timePersonBetweenChecks = 1.5f;
     private float personCheckTimer;
 
     protected override void OnGameCreated()
@@ -28,11 +28,20 @@ public class PersonController : EntityController
         else
         {
             personCheckTimer += Time.deltaTime;
+            if (!navMeshAgent.hasPath)
+            {
+                characterAnimator.SetBool("Walking", false);
+            }
+            else
+            {
+                characterAnimator.SetBool("Walking", true);
+            }
         }
 
-        //Will this be used for both people and zombies?
         if (!deathIdle && health <= 0)
         {
+            gameController.PersonConverted(this);
+            Destroy(gameObject);
             //deathIdle = true;
             //StartCoroutine("Death");
         }
@@ -52,23 +61,21 @@ public class PersonController : EntityController
             }
         }
 
+        float xRand = Random.Range(-1f, 1f);
+        float zRand = Random.Range(-1f, 1f);
+        Vector3 randomDirection = Vector3.Normalize(new Vector3(xRand, 0f, zRand));
+
         // TODO: Se tiene que añadir una variable mas que sea "pensando" para meterle el idle.. porque hay veces que se para para hacer tiempo y sigue haciendo el moonwalk
         if (closestZombie != null && minDistance < GameController.peopleFearDistance)
         {
-            Vector3 direction = Vector3.Normalize(transform.position - closestZombie.gameObject.transform.position);
+            Vector3 direction = Vector3.Normalize((transform.position - closestZombie.gameObject.transform.position) + randomDirection * 3.0f);
             navMeshAgent.SetDestination(transform.position + direction * 20.0f);
-            characterAnimator.SetBool("Walking", true);
         }
         else
         {
-            characterAnimator.SetBool("Walking", true);
-            float xRand = Random.Range(-1f, 1f);
-            float zRand = Random.Range(-1f, 1f);
-
-            Vector3 randomDirection = Vector3.Normalize(new Vector3(xRand, 0f, zRand));
-
             navMeshAgent.SetDestination(transform.position + randomDirection * 5.0f);
         }
+
     }
 
     protected override void DeathBehaviour()

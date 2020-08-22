@@ -1674,6 +1674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombies: []
   people: []
+  zombiePrefab: {fileID: 4555574007165443112, guid: ede7bc2aae18efc4dab9cb069ce78d72,
+    type: 3}
 --- !u!4 &646002915
 Transform:
   m_ObjectHideFlags: 0
@@ -1911,7 +1913,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.1015625, y: 0.03125, z: 0.02734375, w: -0.03125}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
