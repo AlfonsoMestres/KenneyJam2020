@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     public Transform zombiePrefab;
     public Text winLoseText;
     public Texture2D[] mouseSprites;
+    public GameObject shopCanvas; 
 
     private Text curseTouchAmountText;
     private Text civiliansAliveAmountText;
@@ -220,7 +221,7 @@ public class GameController : MonoBehaviour
 
     public void OnGoToShopClicked()
     {
-
+        shopCanvas.SetActive(true);
     }
 
     public void OnPlayAgainClicked()
