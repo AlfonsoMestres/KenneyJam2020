@@ -10329,6 +10329,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 646002914}
+    - target: {fileID: 5589205701434266928, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_Text
+      value: BITE NIGHT
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589205701434266931, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589205701434266931, guid: 67fe2155679695e4da3d6ebd1c491b46,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 105
+      objectReference: {fileID: 0}
     - target: {fileID: 5589205701444789271, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_AnchoredPosition.y
