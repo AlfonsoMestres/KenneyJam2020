@@ -10,10 +10,14 @@ public class ZombieController : EntityController
     private float timeZombieBetweenChecks = 0.5f;
     private float zombieCheckTimer;
 
+    private void Start()
+    {
+        gameController.AddZombie(this);
+    }
+
     protected override void OnGameCreated()
     {
         base.OnGameCreated();
-        gameController.AddZombie(this);
         navMeshAgent.speed = GameController.zombieSpeed;
     }
 

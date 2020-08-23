@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.5, y: -114.9}
-  m_SizeDelta: {x: 59.94, y: 39.335}
+  m_AnchoredPosition: {x: -75.87, y: -114.6}
+  m_SizeDelta: {x: 130.88, y: 23.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8868071929643419236
 CanvasRenderer:
@@ -64,7 +64,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 6cf41eaebff784f43964bb2833208836, type: 3}
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
@@ -517,7 +517,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -667,7 +667,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -801,6 +801,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prices: 01000000020000000300000004000000050000000600000007000000
   cursedHeartsShop: {fileID: 163440910483459493}
+  statType: 3
+  gameController: {fileID: 0}
 --- !u!1 &2201810974665182587
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +836,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -980,7 +982,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1409,6 +1411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prices: 01000000030000000600000008000000
   cursedHeartsShop: {fileID: 163440910483459493}
+  statType: 1
+  gameController: {fileID: 0}
 --- !u!1 &3679607398585776334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,8 +1524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164.2, y: -114.600006}
-  m_SizeDelta: {x: 38.9, y: 18.69}
+  m_AnchoredPosition: {x: -162.48, y: -113.57}
+  m_SizeDelta: {x: 42.34, y: 34.355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2112099027722552458
 CanvasRenderer:
@@ -1550,8 +1554,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_Font: {fileID: 12800000, guid: 6cf41eaebff784f43964bb2833208836, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 7
@@ -2017,7 +2021,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 40
@@ -2062,8 +2066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80.8, y: -117.2}
-  m_SizeDelta: {x: 109.16, y: 20.63}
+  m_AnchoredPosition: {x: 110.3, y: -115}
+  m_SizeDelta: {x: 57.31, y: 40.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9101538719445549347
 CanvasRenderer:
@@ -2103,8 +2107,8 @@ MonoBehaviour:
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: PLAY AGAIN
+    m_LineSpacing: 0.7
+  m_Text: Start Playing
 --- !u!1 &4972977405869875819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,7 +2372,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 40
@@ -2508,6 +2512,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayStatIncreaseSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6020360660211803827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,6 +2643,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2149280350886654140}
         m_MethodName: IncreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayStatIncreaseSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2766,6 +2792,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayStatIncreaseSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6020360660837429926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,16 +2828,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6020360660837429926}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0.007980484, y: 0.000027145546, z: -0.0035334376, w: 0.9999619}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.49999985, y: 2.4999993, z: 1}
   m_Children: []
   m_Father: {fileID: 6020360661136241105}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.915, y: 0, z: -0.40500003}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155.4, y: -115.4}
+  m_AnchoredPosition: {x: 157.2, y: -117.1}
   m_SizeDelta: {x: 100.81, y: 18.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6020360660837429978
@@ -2829,7 +2866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86aa6e7f727efcd45944c515fdd69f0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de48b88e67dfd7147b770b1371e6f949, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2959,6 +2996,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1754355940722443122}
         m_MethodName: IncreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayStatIncreaseSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3221,7 +3269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6020360661311855073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3585,6 +3633,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayStatIncreaseSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6020360661647750476
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,8 +3679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -116.4}
-  m_SizeDelta: {x: 160, y: 40.005}
+  m_AnchoredPosition: {x: 123.85, y: -116.4}
+  m_SizeDelta: {x: 116.29, y: 40.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6020360661647750464
 CanvasRenderer:
@@ -3701,7 +3760,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6020360661647750467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6020360661311855085}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6020360661664484869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,7 +4072,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 40
@@ -4218,7 +4299,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 40
@@ -4262,7 +4343,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4396,6 +4477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prices: 0100000002000000040000000600000008000000
   cursedHeartsShop: {fileID: 0}
+  statType: 0
+  gameController: {fileID: 0}
 --- !u!1 &7724859916149984428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,7 +4545,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 40
@@ -4644,6 +4727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prices: 0a00000014000000
   cursedHeartsShop: {fileID: 163440910483459493}
+  statType: 4
+  gameController: {fileID: 0}
 --- !u!1 &8479225444976582056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,3 +5214,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prices: 010000000200000003000000040000000500000006000000
   cursedHeartsShop: {fileID: 163440910483459493}
+  statType: 2
+  gameController: {fileID: 0}

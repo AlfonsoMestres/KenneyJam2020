@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     public static float zombieSpeed = 5f;
     public static float peopleSpeed = 5f;
-    public static float zombieAttackDistance = 2.0f;
+    public static float zombieAttackDistance = 3.0f;
     public static float peopleFearDistance = 8.0f;
     public bool hasGameStarted;
 

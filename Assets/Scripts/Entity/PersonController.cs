@@ -24,8 +24,8 @@ public class PersonController : EntityController
 
         if (timePersonBetweenChecks < personCheckTimer)
         {
-            WatchOutForZombies();
             personCheckTimer = Random.Range(0.0f, timePersonBetweenChecks * 0.2f);
+            WatchOutForZombies();
         }
         else
         {
@@ -66,7 +66,8 @@ public class PersonController : EntityController
         }
         else
         {
-            navMeshAgent.SetDestination(transform.position + randomDirection * 5.0f);
+            navMeshAgent.SetDestination(transform.position + randomDirection * 2.0f);
+            personCheckTimer = -1.0f;
         }
 
     }

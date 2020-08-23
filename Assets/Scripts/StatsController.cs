@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Stat
+{
+    health,
+    speed,
+    attack,
+    cursePower,
+    initialTouches
+}
+
 public class StatsController : MonoBehaviour
 {
     public List<int> prices;
     public Text cursedHeartsShop;
+    public Stat statType;
+    public GameController gameController;
 
     private Text maxedText;
     private Button buyButton;
     private Slider sliderStat;
     private Text buyAmount;
     private int statPrice;
+    private float maxSliderValue;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +37,7 @@ public class StatsController : MonoBehaviour
         buyAmount.text = prices[0].ToString();
         cursedHeartsShop = gameObject.transform.parent.Find("CurrencyAmount").GetComponent<Text>();
         statPrice = prices[(int)sliderStat.value];
+        maxSliderValue = sliderStat.maxValue;
     }
 
     public void IncreaseStat()
