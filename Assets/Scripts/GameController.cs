@@ -59,13 +59,15 @@ public class GameController : MonoBehaviour
     #region Events
     public IEventSubscribe OnGameCreated { get { return onGameCreated; } }
     public IEventSubscribe OnGameStarted { get { return onGameStarted; } }
-    public IEventSubscribe OnGameFinished { get { return onGameFinished; } }
+    public IEventSubscribe<bool> OnGameFinished { get { return onGameFinished; } }
+    public IEventSubscribe<bool> OnGameFinishedText { get { return onGameFinishedText; } }
     public IEventSubscribe<EntityController> OnPersonConverted { get { return onPersonConverted; } }
     public IEventSubscribe<EntityController> OnZombieDeath { get { return onZombieDeath; } }
 
     private Event onGameCreated = new Event();
     private Event onGameStarted = new Event();
-    private Event onGameFinished = new Event();
+    private Event<bool> onGameFinished = new Event<bool>();
+    private Event<bool> onGameFinishedText = new Event<bool>();
 
     private Event<EntityController> onPersonConverted = new Event<EntityController>();
     private Event<EntityController> onZombieDeath = new Event<EntityController>();
@@ -139,7 +141,7 @@ public class GameController : MonoBehaviour
         gameHasEnded = true;
         playerWon = win;
         Invoke("ChangeEndGameText", 3.0f);
-
+        onGameFinished.Invoke(win);
     }
 
     public void SavePrefs()
@@ -185,7 +187,7 @@ public class GameController : MonoBehaviour
             winLoseText.text = "YOU LOSE";
         }
 
-        onGameFinished.Invoke();
+        onGameFinishedText.Invoke(playerWon);
     }
 
     #region People & Zombie logic
