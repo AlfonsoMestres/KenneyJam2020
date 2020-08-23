@@ -14,41 +14,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliders:
   - statType: 0
-    values:
-    - 10
-    - 8
-    - 6
-    - 4
-    - 2
-    - 1
+    pairs:
+    - value: 10
+      price: 0
+    - value: 8
+      price: 1
+    - value: 6
+      price: 2
+    - value: 4
+      price: 3
+    - value: 2
+      price: 4
   - statType: 1
-    values:
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
+    pairs:
+    - value: 5
+      price: 0
+    - value: 6
+      price: 1
+    - value: 7
+      price: 2
+    - value: 8
+      price: 3
+    - value: 9
+      price: 4
   - statType: 2
-    values:
-    - 20
-    - 25
-    - 30
-    - 40
-    - 45
-    - 50
-    - 55
+    pairs:
+    - value: 20
+      price: 0
+    - value: 25
+      price: 1
+    - value: 30
+      price: 2
+    - value: 35
+      price: 3
+    - value: 45
+      price: 4
   - statType: 3
-    values:
-    - 50
-    - 60
-    - 70
-    - 80
-    - 85
-    - 90
-    - 95
-    - 100
+    pairs:
+    - value: 50
+      price: 0
+    - value: 60
+      price: 1
+    - value: 70
+      price: 2
+    - value: 80
+      price: 3
+    - value: 100
+      price: 4
   - statType: 4
-    values:
-    - 2
-    - 3
-    - 4
+    pairs:
+    - value: 2
+      price: 0
+    - value: 3
+      price: 5
+    - value: 4
+      price: 10
