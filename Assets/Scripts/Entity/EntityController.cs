@@ -12,6 +12,12 @@ public abstract class EntityController : MonoBehaviour
     public float health = 100f;
     public bool isDead = false;
 
+    [SerializeField]
+    protected AudioSource audioSource;
+
+    [SerializeField]
+    protected AudioClip deathClip;
+
     public LookAtCamera lookCamera;
 
     protected bool deathIdle; // This will avoid multiple calls to the coroutine
@@ -65,6 +71,9 @@ public abstract class EntityController : MonoBehaviour
 
     IEnumerator Death()
     {
+        audioSource.clip = deathClip;
+        audioSource.Play();
+
         isDead = true;
         healthBar.transform.parent.gameObject.SetActive(false);
         navMeshAgent.isStopped = true;

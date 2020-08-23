@@ -10,6 +10,9 @@ public class ZombieController : EntityController
     private float timeZombieBetweenChecks = 0.5f;
     private float zombieCheckTimer;
 
+    [SerializeField]
+    private AudioClip hitClip;
+
     private void Start()
     {
         gameController.AddZombie(this);
@@ -62,10 +65,7 @@ public class ZombieController : EntityController
             navMeshAgent.SetDestination(target.transform.position);
             if (minDistance < GameController.zombieAttackDistance && !targetController.isDead)
             {
-                characterAnimator.SetBool("Attacking", true);
-                zombieCheckTimer = -1.0f; //this way they remain in place
-                targetController.TakeDamage(GameController.zombieAttackDamage);
-                navMeshAgent.ResetPath();
+                Attack(targetController);
             } 
             else
             {
@@ -78,6 +78,16 @@ public class ZombieController : EntityController
             characterAnimator.SetBool("Walking", false);
             characterAnimator.SetBool("Attacking", false);
         }
+    }
+
+    private void Attack(EntityController target)
+    {
+        characterAnimator.SetBool("Attacking", true);
+        zombieCheckTimer = -1.0f; //this way they remain in place
+        target.TakeDamage(GameController.zombieAttackDamage);
+        navMeshAgent.ResetPath();
+        audioSource.clip = hitClip;
+        audioSource.Play();
     }
 
     protected override void DeathBehaviour()

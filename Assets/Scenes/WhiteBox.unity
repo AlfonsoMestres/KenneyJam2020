@@ -5043,6 +5043,7 @@ MonoBehaviour:
   missionCompletedClip: {fileID: 8300000, guid: 0b8058303e7278d459dae3fab3c022e6,
     type: 3}
   missionFailedClip: {fileID: 8300000, guid: 1a34a718faf8f544381d66b344f206de, type: 3}
+  cursedTouchClip: {fileID: 8300000, guid: f639e2b8b4747d141abb68e3a33838e4, type: 3}
 --- !u!4 &603824002
 Transform:
   m_ObjectHideFlags: 0

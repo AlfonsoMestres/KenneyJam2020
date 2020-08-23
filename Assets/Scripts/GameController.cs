@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
     #region Events
     public IEventSubscribe OnGameCreated { get { return onGameCreated; } }
     public IEventSubscribe OnGameStarted { get { return onGameStarted; } }
+    public IEventSubscribe OnCursedTouch { get { return onCursedTouch; } }
     public IEventSubscribe<bool> OnGameFinished { get { return onGameFinished; } }
     public IEventSubscribe<bool> OnGameFinishedText { get { return onGameFinishedText; } }
     public IEventSubscribe<EntityController> OnPersonConverted { get { return onPersonConverted; } }
@@ -66,6 +67,7 @@ public class GameController : MonoBehaviour
 
     private Event onGameCreated = new Event();
     private Event onGameStarted = new Event();
+    private Event onCursedTouch = new Event();
     private Event<bool> onGameFinished = new Event<bool>();
     private Event<bool> onGameFinishedText = new Event<bool>();
 
@@ -103,8 +105,9 @@ public class GameController : MonoBehaviour
                     {
                         personController.Die();
                         personController.diedFromTouch = true;
-                        curseAmount = curseAmount - 1;
+                        --curseAmount;
                         curseTouchAmountText.text = ((int)curseAmount).ToString();
+                        onCursedTouch.Invoke();
                     }
                 }
                 else

@@ -29,11 +29,21 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField]
     private AudioClip missionFailedClip;
 
+    [SerializeField]
+    private AudioClip cursedTouchClip;
+
     private void Awake()
     {
         gameController.OnGameStarted.Subscribe(OnGameStarted);    
         gameController.OnGameFinished.Subscribe(OnGameFinished);
         gameController.OnGameFinishedText.Subscribe(OnGameFinishedText);
+        gameController.OnCursedTouch.Subscribe(OnCursedTouch);
+    }
+
+    private void OnCursedTouch()
+    {
+        audioSource.clip = cursedTouchClip;
+        audioSource.Play();
     }
 
     private void OnGameStarted()
