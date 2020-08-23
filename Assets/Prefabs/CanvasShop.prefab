@@ -401,7 +401,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 4
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -803,6 +803,7 @@ MonoBehaviour:
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 3
   gameController: {fileID: 0}
+  statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
 --- !u!1 &2201810974665182587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,7 @@ MonoBehaviour:
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 1
   gameController: {fileID: 0}
+  statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
 --- !u!1 &3679607398585776334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,6 +4481,7 @@ MonoBehaviour:
   cursedHeartsShop: {fileID: 0}
   statType: 0
   gameController: {fileID: 0}
+  statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
 --- !u!1 &7724859916149984428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,6 +4732,7 @@ MonoBehaviour:
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 4
   gameController: {fileID: 0}
+  statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
 --- !u!1 &8479225444976582056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,3 +5220,4 @@ MonoBehaviour:
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 2
   gameController: {fileID: 0}
+  statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}

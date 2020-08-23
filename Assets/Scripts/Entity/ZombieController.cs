@@ -30,7 +30,7 @@ public class ZombieController : EntityController
         //Basic zombie behaviour
         if (zombieActivated && timeZombieBetweenChecks < zombieCheckTimer && health > 0)
         {
-            TakeDamage(5f); // Zombie life span
+            TakeDamage(GameController.zombieHealthDecay); // Zombie life span
             zombieCheckTimer = 0.0f;
             SearchForNewVictim();
         }

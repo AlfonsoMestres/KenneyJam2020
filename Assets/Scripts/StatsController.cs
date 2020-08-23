@@ -18,6 +18,7 @@ public class StatsController : MonoBehaviour
     public Text cursedHeartsShop;
     public Stat statType;
     public GameController gameController;
+    public StatsData statsData;
 
     private Text maxedText;
     private Button buyButton;
@@ -25,6 +26,9 @@ public class StatsController : MonoBehaviour
     private Text buyAmount;
     private int statPrice;
     private float maxSliderValue;
+    private float[] levelUpData;
+    public int currentIndex;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +41,21 @@ public class StatsController : MonoBehaviour
         buyAmount.text = prices[0].ToString();
         cursedHeartsShop = gameObject.transform.parent.Find("CurrencyAmount").GetComponent<Text>();
         statPrice = prices[(int)sliderStat.value];
-        maxSliderValue = sliderStat.maxValue;
+        foreach(var slider in statsData.sliders)
+        {
+            if(slider.statType == statType)
+            {
+                levelUpData = slider.values;
+                break;
+            }
+        }
+        sliderStat.maxValue = levelUpData.Length;
     }
 
     public void IncreaseStat()
     {
-        sliderStat.value = sliderStat.value + 1;
+        ++currentIndex;
+        sliderStat.value = currentIndex;
         GameController.cursedHeartsObtained = GameController.cursedHeartsObtained - statPrice;
 
         if (sliderStat.value == sliderStat.maxValue)

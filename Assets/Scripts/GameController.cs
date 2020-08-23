@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public static float transformTime = 3.5f; // Time a person wait to be transform or killed
     public static int zombieProbability = 100;
     public static int zombieHealth = 40;
+    public static float zombieHealthDecay = 10f;
     public static int zombieAttackDamage = 40;
 
     public static float zombieSpeed = 5f;
@@ -36,6 +37,12 @@ public class GameController : MonoBehaviour
 
     private Text curseTouchAmountText;
     private Text civiliansAliveAmountText;
+
+    public StatsController healthController;
+    public StatsController attackController;
+    public StatsController speedController;
+    public StatsController curseController;
+    public StatsController initialTouchesController;
 
     private bool playerWon;
     private bool gameHasEnded;
@@ -111,8 +118,14 @@ public class GameController : MonoBehaviour
         curseAmount = 1;
         onGameStarted.Invoke();
         LoadPrefs();
+        SetStatsValues();
         hasGameStarted = true;
         curseTouchAmountText.text = curseAmount.ToString();
+    }
+
+    private void SetStatsValues()
+    {
+        
     }
 
     public void EndGame(bool win)
@@ -128,11 +141,23 @@ public class GameController : MonoBehaviour
     private void SavePrefs()
     {
         PlayerPrefs.SetInt("Currency", cursedHeartsObtained);
+        PlayerPrefs.SetInt("healthIndex", healthController.currentIndex);
+        PlayerPrefs.SetInt("attackIndex", attackController.currentIndex);
+        PlayerPrefs.SetInt("speedIndex", speedController.currentIndex);
+        PlayerPrefs.SetInt("curseIndex", curseController.currentIndex);
+        PlayerPrefs.SetInt("touchesIndex", initialTouchesController.currentIndex);
     }
 
     private void LoadPrefs()
     {
         cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 10);
+        healthController.currentIndex = PlayerPrefs.GetInt("healthIndex", 0);
+        attackController.currentIndex = PlayerPrefs.GetInt("attackIndex", 0);
+        speedController.currentIndex = PlayerPrefs.GetInt("speedIndex", 0);
+        curseController.currentIndex = PlayerPrefs.GetInt("curseIndex", 0);
+        initialTouchesController.currentIndex = PlayerPrefs.GetInt("touchesIndex", 0);
+
+        //WHY IS THIS HERE
         cursedHeartsShop.text = cursedHeartsObtained.ToString();
         cursedHeartsGame.text = cursedHeartsObtained.ToString();
     }
