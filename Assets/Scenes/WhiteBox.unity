@@ -2935,7 +2935,7 @@ MonoBehaviour:
   hasGameStarted: 0
   zombies: []
   people: []
-  zombiePrefab: {fileID: 4555574007165443112, guid: ede7bc2aae18efc4dab9cb069ce78d72,
+  zombiePrefab: {fileID: 6038243915249826643, guid: 2ef9925efb3c1b343825766625fd6bdc,
     type: 3}
   winLoseText: {fileID: 195144971}
   mouseSprites:
