@@ -154,7 +154,7 @@ public class GameController : MonoBehaviour
 
     private void LoadPrefs()
     {
-        cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 10);
+        cursedHeartsObtained = PlayerPrefs.GetInt("Currency", 0);
         healthController.currentIndex = PlayerPrefs.GetInt("healthIndex", 0);
         attackController.currentIndex = PlayerPrefs.GetInt("attackIndex", 0);
         speedController.currentIndex = PlayerPrefs.GetInt("speedIndex", 0);
