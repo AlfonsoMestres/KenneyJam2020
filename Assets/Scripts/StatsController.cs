@@ -43,6 +43,7 @@ public class StatsController : MonoBehaviour
         }
         sliderStat.value = currentIndex;
         statPrice = prices[currentIndex];
+        buyAmount.text = prices[currentIndex].ToString();
     }
 
     // Start is called before the first frame update
