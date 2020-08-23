@@ -82,7 +82,6 @@ public class PersonController : EntityController
 
     protected override void DeathBehaviour()
     {
-        isZombie = true;
         gameController.PersonConverted(this, diedFromTouch);
     }
 

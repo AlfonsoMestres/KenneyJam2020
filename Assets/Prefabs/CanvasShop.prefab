@@ -517,7 +517,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -667,7 +667,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473fd55b516e994594116388bad286a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prices: 01000000020000000300000004000000050000000600000007000000
+  prices: 0100000002000000030000000400000005000000060000000700000007000000
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 3
   gameController: {fileID: 0}
@@ -838,7 +838,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -984,7 +984,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473fd55b516e994594116388bad286a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prices: 01000000030000000600000008000000
+  prices: 0100000003000000060000000800000008000000
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 1
   gameController: {fileID: 0}
@@ -4347,7 +4347,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4479,7 +4479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473fd55b516e994594116388bad286a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prices: 0100000002000000040000000600000008000000
+  prices: 010000000200000004000000060000000800000008000000
   cursedHeartsShop: {fileID: 0}
   statType: 0
   gameController: {fileID: 0}
@@ -4731,7 +4731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473fd55b516e994594116388bad286a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prices: 0a00000014000000
+  prices: 0a0000001400000014000000
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 4
   gameController: {fileID: 0}
@@ -5220,7 +5220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473fd55b516e994594116388bad286a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prices: 010000000200000003000000040000000500000006000000
+  prices: 01000000020000000300000004000000050000000600000006000000
   cursedHeartsShop: {fileID: 163440910483459493}
   statType: 2
   gameController: {fileID: 0}

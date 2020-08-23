@@ -14,7 +14,6 @@ public enum Stat
 
 public class StatsController : MonoBehaviour
 {
-    public List<int> prices;
     public Text cursedHeartsShop;
     public Stat statType;
     public GameController gameController;
@@ -25,8 +24,6 @@ public class StatsController : MonoBehaviour
     private Slider sliderStat;
     private Text buyAmount;
     private int statPrice;
-    private float maxSliderValue;
-    private float[] levelUpData;
     public int currentIndex;
 
 
@@ -37,13 +34,23 @@ public class StatsController : MonoBehaviour
         {
             if (slider.statType == statType)
             {
-                sliderStat.maxValue = slider.values.Length;
+                sliderStat.maxValue = slider.pairs.Length;
+                if(currentIndex >= slider.pairs.Length - 1)
+                {
+                    buyAmount.gameObject.SetActive(false);
+                    buyButton.gameObject.SetActive(false);
+                    maxedText.enabled = true;
+                }
+                else
+                {
+                    statPrice = (int)slider.pairs[currentIndex + 1].price;
+                }
+
+                buyAmount.text = statPrice.ToString();
                 break;
             }
         }
         sliderStat.value = currentIndex;
-        statPrice = prices[currentIndex];
-        buyAmount.text = prices[currentIndex].ToString();
     }
 
     // Start is called before the first frame update
@@ -52,9 +59,7 @@ public class StatsController : MonoBehaviour
         buyButton = gameObject.GetComponentInChildren<Button>();
         sliderStat = gameObject.GetComponentInChildren<Slider>();
         maxedText = gameObject.transform.Find("MaxedStat").GetComponent<Text>();
-        sliderStat.maxValue = prices.Count;
         buyAmount = gameObject.transform.Find("Amount").GetComponent<Text>();
-        buyAmount.text = prices[0].ToString();
         cursedHeartsShop = gameObject.transform.parent.Find("CurrencyAmount").GetComponent<Text>();
 
         SetSlider();
@@ -71,10 +76,8 @@ public class StatsController : MonoBehaviour
             buyAmount.gameObject.SetActive(false);
             buyButton.gameObject.SetActive(false);
             maxedText.enabled = true;
-            return;
         }
-        statPrice = prices[currentIndex];
-        buyAmount.text = statPrice.ToString();
+        SetSlider();
         gameController.SavePrefs();
     }
 
@@ -84,7 +87,7 @@ public class StatsController : MonoBehaviour
         {
             if(slider.statType == statType)
             {
-                return slider.values[currentIndex];
+                return slider.pairs[currentIndex].value;
             }
         }
 

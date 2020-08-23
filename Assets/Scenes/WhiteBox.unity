@@ -5668,7 +5668,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
+  m_BoundingSphereOverride: {x: 9.39e-43, y: 0, z: 0, w: -1.37341305e+11}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -21298,11 +21298,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 569339242784519855, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1754355940722443122, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: gameController
@@ -21313,21 +21308,11 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 646002914}
-    - target: {fileID: 2326634405843030547, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3556811354208764075, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 646002914}
-    - target: {fileID: 5910288477255102347, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6020360660177426984, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -21458,11 +21443,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasShop
       objectReference: {fileID: 0}
-    - target: {fileID: 6020360661311855085, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6020360661587103899, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -21473,21 +21453,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 646002914}
-    - target: {fileID: 7727989061942817919, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8214467675566513696, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 646002914}
-    - target: {fileID: 8455254415430870782, guid: ea95b963f840b8c449f4f69c065a858b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9158653671788096186, guid: ea95b963f840b8c449f4f69c065a858b,
         type: 3}
       propertyPath: gameController
