@@ -13,12 +13,12 @@ public class ZombieController : EntityController
     private void Start()
     {
         gameController.AddZombie(this);
+        navMeshAgent.speed = GameController.zombieSpeed;
     }
 
     protected override void OnGameCreated()
     {
         base.OnGameCreated();
-        navMeshAgent.speed = GameController.zombieSpeed;
     }
 
     protected override void Update()

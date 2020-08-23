@@ -30,8 +30,23 @@ public class StatsController : MonoBehaviour
     public int currentIndex;
 
 
+
+    public void SetSlider()
+    {
+        foreach (var slider in statsData.sliders)
+        {
+            if (slider.statType == statType)
+            {
+                sliderStat.maxValue = slider.values.Length;
+                break;
+            }
+        }
+        sliderStat.value = currentIndex;
+        statPrice = prices[currentIndex];
+    }
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         buyButton = gameObject.GetComponentInChildren<Button>();
         sliderStat = gameObject.GetComponentInChildren<Slider>();
@@ -40,16 +55,8 @@ public class StatsController : MonoBehaviour
         buyAmount = gameObject.transform.Find("Amount").GetComponent<Text>();
         buyAmount.text = prices[0].ToString();
         cursedHeartsShop = gameObject.transform.parent.Find("CurrencyAmount").GetComponent<Text>();
-        statPrice = prices[(int)sliderStat.value];
-        foreach(var slider in statsData.sliders)
-        {
-            if(slider.statType == statType)
-            {
-                levelUpData = slider.values;
-                break;
-            }
-        }
-        sliderStat.maxValue = levelUpData.Length;
+
+        SetSlider();
     }
 
     public void IncreaseStat()
@@ -65,8 +72,22 @@ public class StatsController : MonoBehaviour
             maxedText.enabled = true;
             return;
         }
-        statPrice = prices[(int)sliderStat.value];
+        statPrice = prices[currentIndex];
         buyAmount.text = statPrice.ToString();
+        gameController.SavePrefs();
+    }
+
+    public float GetCurrentStatValue()
+    {
+        foreach(var slider in statsData.sliders)
+        {
+            if(slider.statType == statType)
+            {
+                return slider.values[currentIndex];
+            }
+        }
+
+        return 0f;
     }
 
     // Update is called once per frame

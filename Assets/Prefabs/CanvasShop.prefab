@@ -804,6 +804,7 @@ MonoBehaviour:
   statType: 3
   gameController: {fileID: 0}
   statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
+  currentIndex: 0
 --- !u!1 &2201810974665182587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1416,7 @@ MonoBehaviour:
   statType: 1
   gameController: {fileID: 0}
   statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
+  currentIndex: 0
 --- !u!1 &3679607398585776334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,7 +3777,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: StartGame
+        m_MethodName: OnPlayAgainClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4482,6 +4484,7 @@ MonoBehaviour:
   statType: 0
   gameController: {fileID: 0}
   statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
+  currentIndex: 0
 --- !u!1 &7724859916149984428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,6 +4736,7 @@ MonoBehaviour:
   statType: 4
   gameController: {fileID: 0}
   statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
+  currentIndex: 0
 --- !u!1 &8479225444976582056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,3 +5225,4 @@ MonoBehaviour:
   statType: 2
   gameController: {fileID: 0}
   statsData: {fileID: 11400000, guid: 310b59b26d810f148a7f16e159f7a5df, type: 2}
+  currentIndex: 0

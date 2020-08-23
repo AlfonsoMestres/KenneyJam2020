@@ -23,11 +23,11 @@ MonoBehaviour:
     - 1
   - statType: 1
     values:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
   - statType: 2
     values:
     - 20
@@ -49,8 +49,6 @@ MonoBehaviour:
     - 100
   - statType: 4
     values:
-    - 1
     - 2
     - 3
     - 4
-    - 5

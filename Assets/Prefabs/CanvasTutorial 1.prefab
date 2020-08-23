@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92.8, y: -101}
+  m_AnchoredPosition: {x: 23.1, y: -101}
   m_SizeDelta: {x: 100.81, y: 18.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205699410329739
@@ -184,8 +184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4, y: -45.49998}
-  m_SizeDelta: {x: 370.02, y: 39.48}
+  m_AnchoredPosition: {x: 0.0000076294, y: -45.1}
+  m_SizeDelta: {x: 359.26, y: 55.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205700417170659
 CanvasRenderer:
@@ -226,8 +226,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cursing, killing and expending time in the game will award you with currency,
-    use it to upgrade your cursed army!
+  m_Text: Kill healthy civilians will award you with cursed hearts, use them to upgrade
+    your cursed army!
 --- !u!1 &5589205700584845065
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.60001, y: -1.6899953}
+  m_AnchoredPosition: {x: 4.60001, y: -1.6}
   m_SizeDelta: {x: 325.87, y: 18.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205700884213482
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 5589205700959579495}
   - component: {fileID: 5589205700959579494}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.100006, y: -102.090004}
+  m_AnchoredPosition: {x: -4.599968, y: -102.090004}
   m_SizeDelta: {x: 102.63, y: 41.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205700959579492
@@ -746,7 +746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4, y: 105.150024}
+  m_AnchoredPosition: {x: 27.6, y: 105}
   m_SizeDelta: {x: 220.26, y: 40.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205701434266929
@@ -788,7 +788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: UNDEAD CURSE
+  m_Text: BITE NIGHT
 --- !u!1 &5589205701444789270
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6, y: 16.9}
+  m_AnchoredPosition: {x: 4.6, y: 16.99001}
   m_SizeDelta: {x: 325.87, y: 18.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5589205701444789269

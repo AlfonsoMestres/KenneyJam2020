@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
@@ -12,10 +12,10 @@ public class GameController : MonoBehaviour
     public Text cursedHeartsGame;
 
     public static float transformTime = 3.5f; // Time a person wait to be transform or killed
-    public static int zombieProbability = 100;
+    public static float zombieProbability = 100;
     public static int zombieHealth = 40;
     public static float zombieHealthDecay = 10f;
-    public static int zombieAttackDamage = 40;
+    public static float zombieAttackDamage = 40f;
 
     public static float zombieSpeed = 5f;
     public static float peopleSpeed = 5f;
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public static float peopleFearDistance = 8.0f;
     public bool hasGameStarted;
 
-    public static int curseAmount = 1;
+    public static float curseAmount = 1;
 
     public List<EntityController> zombies = new List<EntityController>();
     public List<EntityController> people = new List<EntityController>();
@@ -100,8 +100,9 @@ public class GameController : MonoBehaviour
                     if (Input.GetMouseButtonDown(0) && curseAmount > 0)
                     {
                         personController.Die();
+                        personController.diedFromTouch = true;
                         curseAmount = curseAmount - 1;
-                        curseTouchAmountText.text = curseAmount.ToString();
+                        curseTouchAmountText.text = ((int)curseAmount).ToString();
                     }
                 }
                 else
@@ -115,7 +116,6 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         //Start logic
-        curseAmount = 1;
         onGameStarted.Invoke();
         LoadPrefs();
         SetStatsValues();
@@ -125,7 +125,11 @@ public class GameController : MonoBehaviour
 
     private void SetStatsValues()
     {
-        
+        zombieHealthDecay = healthController.GetCurrentStatValue();
+        zombieAttackDamage = attackController.GetCurrentStatValue();
+        zombieProbability = curseController.GetCurrentStatValue();
+        zombieSpeed = speedController.GetCurrentStatValue();
+        curseAmount = initialTouchesController.GetCurrentStatValue();
     }
 
     public void EndGame(bool win)
@@ -138,7 +142,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    private void SavePrefs()
+    public void SavePrefs()
     {
         PlayerPrefs.SetInt("Currency", cursedHeartsObtained);
         PlayerPrefs.SetInt("healthIndex", healthController.currentIndex);
@@ -221,14 +225,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void PersonConverted(EntityController person)
+    public void PersonConverted(EntityController person, bool fromTouch = false)
     {
         Transform personTransform = person.gameObject.transform;
         RemovePerson(person);
         onPersonConverted.Invoke(person);
         Destroy(person.gameObject);
         ++cursedHeartsObtained;
-        Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
+
+        if (fromTouch || Random.Range(0.0f, 100.0f) <= zombieProbability)
+        {
+            Instantiate(zombiePrefab, personTransform.position, personTransform.rotation);
+        }
 
         if (people.Count == 0 && !gameHasEnded)
         {
@@ -247,6 +255,11 @@ public class GameController : MonoBehaviour
     public void OnGoToShopClicked()
     {
         shopCanvas.SetActive(true);
+        healthController.SetSlider();
+        attackController.SetSlider();
+        speedController.SetSlider();
+        curseController.SetSlider();
+        initialTouchesController.SetSlider();
     }
 
     public void OnPlayAgainClicked()

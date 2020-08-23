@@ -8,6 +8,8 @@ public class PersonController : EntityController
     public float timePersonBetweenChecks = 1.5f;
     private float personCheckTimer;
 
+    public bool diedFromTouch = false;
+
     protected override void OnGameCreated()
     {
         base.OnGameCreated();
@@ -80,11 +82,8 @@ public class PersonController : EntityController
 
     protected override void DeathBehaviour()
     {
-        if (Random.Range(0.0f, 100.0f) <= GameController.zombieProbability)
-        {
-            isZombie = true;
-            gameController.PersonConverted(this);
-        }
+        isZombie = true;
+        gameController.PersonConverted(this, diedFromTouch);
     }
 
 
