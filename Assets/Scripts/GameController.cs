@@ -78,7 +78,6 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         CreateGame();
-        Cursor.SetCursor(mouseSprites[0], Vector2.zero, CursorMode.Auto);
     }
 
 
@@ -100,7 +99,6 @@ public class GameController : MonoBehaviour
                 var personController = hit.collider.gameObject.GetComponentInChildren<PersonController>();
                 if (personController != null)
                 {
-                    Cursor.SetCursor(mouseSprites[1], Vector2.zero, CursorMode.Auto);
                     if (Input.GetMouseButtonDown(0) && curseAmount > 0)
                     {
                         personController.Die();
@@ -109,10 +107,6 @@ public class GameController : MonoBehaviour
                         curseTouchAmountText.text = ((int)curseAmount).ToString();
                         onCursedTouch.Invoke();
                     }
-                }
-                else
-                {
-                    Cursor.SetCursor(mouseSprites[0], Vector2.zero, CursorMode.Auto);
                 }
             }
         }
