@@ -34,7 +34,7 @@ public class StatsController : MonoBehaviour
         {
             if (slider.statType == statType)
             {
-                sliderStat.maxValue = slider.pairs.Length;
+                sliderStat.maxValue = slider.pairs.Length - 1;
                 if(currentIndex >= slider.pairs.Length - 1)
                 {
                     buyAmount.gameObject.SetActive(false);
