@@ -12057,18 +12057,18 @@ PrefabInstance:
     - target: {fileID: 5589205700417170658, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_Text
-      value: Cursing, killing and expending time in the game will award you with cursed
-        hearts, use them to upgrade your cursed army!
+      value: Kill healthy civilians will award you with cursed hearts, use them to
+        upgrade your cursed army!
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700417170685, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.6
+      value: -45.1
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700417170685, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 49.49
+      value: 55.7
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700417170685, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
@@ -12078,12 +12078,12 @@ PrefabInstance:
     - target: {fileID: 5589205700417170685, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 299.24
+      value: 359.26
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700884213476, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.5
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5589205700954469456, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
@@ -12238,7 +12238,7 @@ PrefabInstance:
     - target: {fileID: 5589205701444789271, guid: 67fe2155679695e4da3d6ebd1c491b46,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 22.090006
+      value: 16.99001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fe2155679695e4da3d6ebd1c491b46, type: 3}

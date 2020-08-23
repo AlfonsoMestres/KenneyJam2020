@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class PersonController : EntityController
 {
     public float timePersonBetweenChecks = 1.5f;
-
-    public LookAtCamera lookCamera;
-
     private float personCheckTimer;
 
     protected override void OnGameCreated()
@@ -17,7 +14,6 @@ public class PersonController : EntityController
         gameController.AddPerson(this);
         navMeshAgent.speed = GameController.peopleSpeed;
         personCheckTimer = Random.Range(0.0f, timePersonBetweenChecks);
-        lookCamera = gameObject.transform.Find("Cursed").GetComponent<LookAtCamera>();
     }
 
     protected override void Update()
@@ -85,6 +81,7 @@ public class PersonController : EntityController
     {
         if (Random.Range(0.0f, 100.0f) <= GameController.zombieProbability)
         {
+            isZombie = true;
             gameController.PersonConverted(this);
         }
     }

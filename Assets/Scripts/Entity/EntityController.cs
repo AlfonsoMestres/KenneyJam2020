@@ -12,6 +12,8 @@ public abstract class EntityController : MonoBehaviour
     public float health = 100f;
     public bool isDead = false;
 
+    public LookAtCamera lookCamera;
+
     protected bool deathIdle; // This will avoid multiple calls to the coroutine
     protected NavMeshAgent navMeshAgent;
     protected Animator characterAnimator;
@@ -26,6 +28,7 @@ public abstract class EntityController : MonoBehaviour
         gameController.OnGameCreated.Subscribe(OnGameCreated);
 
         characterAnimator = gameObject.transform.Find("characterMedium").GetComponent<Animator>();
+        if(!isZombie) lookCamera = gameObject.transform.Find("Cursed").GetComponent<LookAtCamera>();
 
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -43,7 +46,16 @@ public abstract class EntityController : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0 && !isDead) StartCoroutine("Death");
+
+        if (health <= 0 && !isDead && !isZombie)
+        {
+            lookCamera.upAnimation = true;
+        }
+
+        if (health <= 0 && !isDead) {
+            StartCoroutine("Death"); 
+        }
+        
     }
 
     protected virtual void Update()
